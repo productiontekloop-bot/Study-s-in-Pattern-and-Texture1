@@ -7,6 +7,8 @@ export interface ImageArtwork {
   imageUrl: string;
   productUrl: string;
   isLarge?: boolean;
+  width?: number;  // Optional custom width (in meters). Overrides global config.
+  height?: number; // Optional custom height (in meters). Overrides global config.
 }
 
 export const GALLERY_IMAGES: ImageArtwork[] = [
@@ -19,7 +21,7 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     price: " 1,200.00",
     imageUrl: "/images/art1.jpg", // Tall aspect ratio placeholder
     productUrl: "https://your-link-1.com",
-    isLarge: true
+    isLarge: true,
   },
 
   // --- 2. NORTH WALL (6 Normal Artworks surrounding the Centerpiece) ---
@@ -30,7 +32,9 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     description: "Elegant gallery-level exhibition frame. Ready for replacement.",
     price: "$1,250",
     imageUrl: "/images/art2.png",
-    productUrl: "https://your-link-2.com"
+    productUrl: "https://your-link-2.com",
+    width: 2.0,
+    height: 6.0
   },
   {
     id: "3",
@@ -39,7 +43,9 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     description: "Elegant gallery-level exhibition frame. Ready for replacement.",
     price: "$1,400",
     imageUrl: "/images/art3.png",
-    productUrl: "https://your-link-3.com"
+    productUrl: "https://your-link-3.com",
+    width: 3.0,
+    height: 3.0
   },
   {
     id: "4",
@@ -87,6 +93,7 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     price: "$850",
     imageUrl: "/images/art8.jpg",
     productUrl: "https://your-link-8.com"
+    
   },
   {
     id: "9",

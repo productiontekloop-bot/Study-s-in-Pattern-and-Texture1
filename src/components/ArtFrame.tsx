@@ -1,5 +1,5 @@
 import { useTexture, useCursor } from '@react-three/drei';
-import { useState, Suspense } from 'react';
+import { useState, Suspense, useMemo } from 'react';
 import * as THREE from 'three';
 import { Artwork } from '../data/artworks';
 import ErrorBoundary from './ErrorBoundary';
@@ -28,6 +28,36 @@ function TexturedArtworkMesh({
 }) {
   const texture = useTexture(artwork.imageUrl);
 
+  // Auto-center the image texture and preserve aspect-ratio (like background-size: cover)
+  const centeredTexture = useMemo(() => {
+    if (!texture) return null;
+    const t = texture.clone();
+    
+    t.wrapS = THREE.ClampToEdgeWrapping;
+    t.wrapT = THREE.ClampToEdgeWrapping;
+    t.matrixAutoUpdate = true;
+    
+    if (t.image && typeof t.image === 'object' && 'width' in t.image && 'height' in t.image) {
+      const img = t.image as { width: number; height: number };
+      const imageAspect = img.width / img.height;
+      const planeAspect = width / height;
+
+      if (imageAspect > planeAspect) {
+        // Texture is wider than frame: crop horizontally, keep vertically centered
+        t.repeat.set(planeAspect / imageAspect, 1);
+        t.offset.set((1 - planeAspect / imageAspect) / 2, 0);
+      } else {
+        // Texture is taller than frame: crop vertically, keep horizontally centered
+        t.repeat.set(1, imageAspect / planeAspect);
+        t.offset.set(0, (1 - imageAspect / planeAspect) / 2);
+      }
+    }
+    t.needsUpdate = true;
+    return t;
+  }, [texture, width, height]);
+
+  if (!centeredTexture) return null;
+
   return (
     <mesh 
       position={[0, 0, 0.01]}
@@ -40,7 +70,7 @@ function TexturedArtworkMesh({
     >
       <planeGeometry args={[width, height]} />
       <meshStandardMaterial 
-        map={texture} 
+        map={centeredTexture} 
         emissive={hovered || isActive ? "#222" : "#000"}
         emissiveIntensity={0.5}
         toneMapped={false}
@@ -86,10 +116,9 @@ export function ArtFrame({ artwork, onClick, isActive }: ArtFrameProps) {
 
   useCursor(hovered);
 
-  // Normal artworks are square 3.3m, large vertical artwork is 6.4m with exact aspect ratio (223 x 1468)
-  const isLarge = artwork.isLarge === true;
-  const height = isLarge ? 6.4 : 3.3;
-  const width = isLarge ? 6.4 * (223 / 1468) : 3.3;
+  // Directly leverage the customized sizing loaded from the image configuration
+  const width = artwork.width;
+  const height = artwork.height;
 
   return (
     <group 

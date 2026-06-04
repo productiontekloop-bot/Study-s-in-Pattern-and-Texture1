@@ -141,9 +141,11 @@ function Rig({ selectedArtwork, currentRoom }: { selectedArtwork: Artwork | null
 
   useFrame((state, delta) => {
     if (selectedArtwork) {
-      // Zoom into artwork - kept slightly farther out for better visibility
+      // Zoom into artwork - scale focus distance dynamically on artwork dimensions
       const artRotation = new THREE.Euler(...selectedArtwork.rotation);
-      const offset = new THREE.Vector3(0, 0, 6);
+      const sizeFactor = Math.max(selectedArtwork.width, selectedArtwork.height);
+      const zoomDistance = Math.max(1.8, sizeFactor * 0.75 + 0.3);
+      const offset = new THREE.Vector3(0, 0, zoomDistance);
       offset.applyEuler(artRotation);
       
       const artworkPos = new THREE.Vector3(...selectedArtwork.position);
