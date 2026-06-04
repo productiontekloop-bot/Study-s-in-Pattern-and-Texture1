@@ -33,7 +33,7 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     price: "$1,250",
     imageUrl: "/images/art2.png",
     productUrl: "https://your-link-2.com",
-    width: 2.0,
+    width: 4.0,
     height: 6.0
   },
   {
@@ -165,7 +165,7 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     title: "South Wall Panel 1",
     artist: "Artist Room 1",
     description: "Elegant gallery-level exhibition frame. Ready for replacement.",
-    price: "$750",
+    price: "$350",
     imageUrl: "/images/art16.png",
     productUrl: "https://your-link-16.com"
   },
