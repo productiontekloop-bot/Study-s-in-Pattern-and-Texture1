@@ -39,7 +39,7 @@ export function ViewerUI({ artwork, onClose }: ViewerUIProps) {
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-5xl font-serif text-white mb-2 leading-tight"
+                className="text-2xl font-serif text-white mb-2 leading-tight"
               >
                 {artwork.title}
               </motion.h2>
