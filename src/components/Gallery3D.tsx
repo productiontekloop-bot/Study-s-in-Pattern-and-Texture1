@@ -144,7 +144,7 @@ function Rig({ selectedArtwork, currentRoom }: { selectedArtwork: Artwork | null
       // Zoom into artwork - scale focus distance dynamically on artwork dimensions
       const artRotation = new THREE.Euler(...selectedArtwork.rotation);
       const sizeFactor = Math.max(selectedArtwork.width, selectedArtwork.height);
-      const zoomDistance = Math.max(1.8, sizeFactor * 0.75 + 0.3);
+      const zoomDistance = Math.max(1.8, sizeFactor * 0.75 + 2.30);
       const offset = new THREE.Vector3(0, 0, zoomDistance);
       offset.applyEuler(artRotation);
       
