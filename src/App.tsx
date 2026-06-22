@@ -66,7 +66,7 @@ export default function App() {
                   className="w-full h-full bg-gold"
                 />
               </div>
-              <p className="mt-12 text-[9px] font-mono text-white/30 tracking-[0.6em] uppercase">Study's in Pattern and Texture</p>
+              <p className="mt-12 text-[9px] font-mono text-white/30 tracking-[0.6em] uppercase">Initialising Core Environment</p>
             </motion.div>
           </motion.div>
         )}

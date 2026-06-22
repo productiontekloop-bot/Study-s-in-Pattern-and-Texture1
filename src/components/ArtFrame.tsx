@@ -1,4 +1,4 @@
-import { useTexture, useCursor } from '@react-three/drei';
+import { useTexture, useCursor, Text } from '@react-three/drei';
 import { useState, Suspense, useMemo } from 'react';
 import * as THREE from 'three';
 import { Artwork } from '../data/artworks';
@@ -136,6 +136,59 @@ export function ArtFrame({ artwork, onClick, isActive }: ArtFrameProps) {
           metalness={0.2} 
         />
       </mesh>
+
+      {/* Bottom Label Plaque (Artist, Title, Size) */}
+      {!(artwork.isLarge || artwork.id === "1") && (
+        <group position={[0, -height / 2 - 0.62, 0.01]}>
+          {/* Outer border plate */}
+          <mesh position={[0, 0, 0]} castShadow receiveShadow>
+            <boxGeometry args={[2.50, 0.65, 0.01]} />
+            <meshStandardMaterial color="#444444" roughness={0.5} metalness={0.2} />
+          </mesh>
+          {/* Inner black plate */}
+          <mesh position={[0, 0, 0.006]} castShadow receiveShadow>
+            <boxGeometry args={[2.44, 0.59, 0.01]} />
+            <meshStandardMaterial color="#050505" roughness={0.8} metalness={0.1} />
+          </mesh>
+          
+          {/* Line 1: Artist Name */}
+          <Text
+            position={[0, 0.17, 0.012]}
+            fontSize={0.08}
+            color="#ffffff"
+            anchorX="center"
+            anchorY="middle"
+            fontWeight="bold"
+            letterSpacing={0.04}
+          >
+            Grace Refuerzo 
+          </Text>
+
+          {/* Line 2: Product Name (Title) */}
+          <Text
+            position={[0, 0.01, 0.012]}
+            fontSize={0.10}
+            color="#ffffff"
+            anchorX="center"
+            anchorY="middle"
+            fontWeight="medium"
+          >
+            {artwork.title}
+          </Text>
+
+          {/* Line 3: Artwork Size */}
+          <Text
+            position={[0, -0.15, 0.012]}
+            fontSize={0.08}
+            color="#ffffff"
+            anchorX="center"
+            anchorY="middle"
+            fontWeight="normal"
+          >
+            {artwork.size}
+          </Text>
+        </group>
+      )}
 
       {/* Textured Canvas wrapped in ErrorBoundary + Suspense */}
       <ErrorBoundary fallback={

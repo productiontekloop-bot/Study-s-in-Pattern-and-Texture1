@@ -47,9 +47,12 @@ export function ViewerUI({ artwork, onClose }: ViewerUIProps) {
               <motion.p 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="text-white/50 text-sm italic mb-8"
+                className="text-white/50 text-sm italic mb-8 flex justify-between items-center"
               >
-                {artwork.artist}, 2024
+                <span>{artwork.artist}, 2026</span>
+                {artwork.size && (
+                  <span className="text-gold font-sans not-italic text-xs font-semibold px-2 py-0.5 rounded bg-white/5 border border-white/10 uppercase tracking-wider">{artwork.size}</span>
+                )}
               </motion.p>
 
               <div className="space-y-6">
