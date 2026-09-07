@@ -187,15 +187,15 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
   },
   {
     id: "15",
-    title: "Ocean Aerial Series 1, Encaustic on wood",
+    title: "City Scape, Venetian plaster, acrylic on wood",
     artist: "Grace Refuerzo",
     description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
     price: "$4,500",
-    imageUrl: "/images/art15.png",
-    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=2483&quantity=1",
+    imageUrl: "/images/art20.png",
+    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1240&quantity=1",
     width: 3.0,
     height: 4.0,
-    size: "36in x 48in"
+    size: "30in x 40in"
   },
 
   // --- 4. SOUTH WALL (8 Normal Artworks) ---
@@ -211,17 +211,17 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     height: 4.0,
     size: "36in x 48in"
   },
-  {
+ {
     id: "17",
-    title: "Ink Series l, Acrylic, plaster, ink on wood",
+    title: "Ocean Aerial Series 1, Encaustic on wood",
     artist: "Grace Refuerzo",
     description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
-    price: "$2,400",
-    imageUrl: "/images/art17.png",
-    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1284&quantity=1",
-    width: 2.0,
-    height: 3.0,
-    size: "24in x 24in"
+    price: "$4,500",
+    imageUrl: "/images/art15.png",
+    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=2483&quantity=1",
+    width: 3.0,
+    height: 4.0,
+    size: "36in x 48in"
   },
   {
     id: "18",
@@ -249,36 +249,37 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
   },
   {
     id: "20",
-    title: "City Scape, Venetian plaster, acrylic on wood",
+    title: "Ink Series l, Acrylic, plaster, ink on wood",
     artist: "Grace Refuerzo",
     description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
-    price: "$4,500",
-    imageUrl: "/images/art20.png",
-    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1240&quantity=1",
-    width: 3.0,
-    height: 4.0,
-    size: "30in x 40in"
+    price: "$2,400",
+    imageUrl: "/images/art17.png",
+    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1284&quantity=1",
+    width: 2.0,
+    height: 3.0,
+    size: "24in x 24in"
   },
+
   {
     id: "21",
-    title: "Texture l, Acrylic on canvas, 36in x 36in",
+    title: "Texture ll, Acrylic on canvas",
     artist: "Grace Refuerzo",
     description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
     price: "$1,500",
     imageUrl: "/images/art21.png",
-    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1276&quantity=1",
+    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1269&quantity=1",
     width: 3.0,
     height: 3.0,
     size: "36in x 36in"
   },
   {
     id: "22",
-    title: "Texture ll, Acrylic on canvas",
+    title: "Texture l, Acrylic on canvas",
     artist: "Grace Refuerzo",
     description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
     price: "$1,500",
     imageUrl: "/images/art22.png",
-    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1269&quantity=1",
+    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1276&quantity=1",
     width: 3.0,
     height: 3.0,
     size: "36in x 36in"
@@ -381,18 +382,18 @@ export const GALLERY_IMAGES: ImageArtwork[] = [
     height: 4.0,
     size: "36in x 48in"
   },
-  {
-    id: "31",
-    title: "City Scape Series, Acrylc on wood",
-    artist: "Grace Refuerzo",
-    description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
-    price: "$3,500.00",
-    imageUrl: "/images/art32.png",
-    productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1239&quantity=1",
-    width: 3.0,
-    height: 3.0,
-    size: "24in x 36in"
-  }
+  // {
+  //   id: "31",
+  //   title: "City Scape Series, Acrylc on wood",
+  //   artist: "Grace Refuerzo",
+  //   description: "Grace Refuerzo -level exhibition frame. Ready for replacement.",
+  //   price: "$3,500.00",
+  //   imageUrl: "/images/art32.png",
+  //   productUrl: "https://demowebsiteexecutions.com/grace/checkout/?add-to-cart=1239&quantity=1",
+  //   width: 3.0,
+  //   height: 3.0,
+  //   size: "24in x 36in"
+  // }
 ];
 
 // NOTE: To use your local images later:
